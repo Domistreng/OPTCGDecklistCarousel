@@ -7,8 +7,38 @@ tempParent.style.position = 'absolute'
 tempParent.style.top = '0px'
 tempParent.style.cursor = 'pointer';
 
-tempParent.onclick = function() {
-    navigator.clipboard.writeText(tempParent.getAttribute('deckList'));
+tempParent.onclick = async function() {
+
+    currentParent = tempParent
+
+    navigator.clipboard.writeText(currentParent.getAttribute('deckList'));
+
+    navigator.clipboard.writeText(currentParent.getAttribute('deckList'));
+    var e = window.event;
+
+    var posX = e.clientX;
+    var posY = e.clientY;
+
+    var position = currentParent.getBoundingClientRect();
+    var x = position.left;
+    var y = position.top;
+
+    posX -= x
+    posY -= y
+
+    // var d = document.getElementById('body');
+    var linkCopy = document.createElement('p')
+    linkCopy.style.position = "absolute";
+    linkCopy.style.left = posX+'px';
+    linkCopy.style.top = posY+'px';
+    linkCopy.style.fontSize = '20px';
+    linkCopy.style.backgroundColor = 'White';
+    linkCopy.innerHTML = "Link Copied";
+
+    currentParent.appendChild(linkCopy)
+
+    await delay(1000);
+    currentParent.removeChild(linkCopy)
 }
 
 // Need to make multiple heights for mobile vs pc screen
