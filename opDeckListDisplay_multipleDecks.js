@@ -69,11 +69,12 @@ for (let j = 0; j < tempParents.length; j ++) {
 
         let tempText = document.createElement("div")
         tempText.style.position = 'absolute';
-        tempText.style.top = '90%';
+        tempText.style.top = '85%';
         tempText.style.left = '50%';
         tempText.style.transform = 'translate(-50%, -50%)';
         tempText.style.fontSize = '40px';
-        tempText.style.color = 'Black';
+        tempText.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        tempText.style.color = 'White';
         tempText.innerHTML = deckList[i].substring(0,2);
 
         tempCont.appendChild(temp)

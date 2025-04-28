@@ -1,4 +1,5 @@
 # IN DEVELOPMENT
+#### Need to copy code rom multideck -> md & single
 
 # OPTCGDecklistDisplay
 ### HTML + JS
